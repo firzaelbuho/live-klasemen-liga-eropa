@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="#FFFFFF"
+
+
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="end"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="1. "
+            android:id="@+id/teamNumber"
+            android:textSize="16dp"
+            />
+        <ImageView
+            android:layout_marginHorizontal="5dp"
+            android:layout_gravity="center"
+            android:layout_width="30dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_height="30dp"
+            android:id="@+id/teamLogo"/>
+
+        <TextView
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Team"
+            android:id="@+id/teamName"
+            android:textColor="@android:color/black"
+            android:textSize="16dp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_gravity=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:id="@+id/played"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"/>
+            <TextView
+
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:id="@+id/win"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"/>
+            <TextView
+                android:id="@+id/draw"
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"/>
+            <TextView
+                android:id="@+id/loss"
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"/>
+            <TextView
+                android:id="@+id/gd"
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"/>
+            <TextView
+                android:id="@+id/point"
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"/>
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_marginVertical="@android:dimen/app_icon_size"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:textColor="#000000"
+        android:textSize="29dp"
+        android:layout_height="wrap_content"
+        android:text="Pilih Liga"
+        />
+
+    <LinearLayout
+        android:paddingHorizontal="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:background="@color/purple_200"
+            android:id="@+id/england"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/epl"
+            />
+        <ImageButton
+            android:background="#2196F3"
+            android:padding="30dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:scaleType="fitCenter"
+            android:layout_height="150dp"
+            android:src="@drawable/seriea"
+            android:id="@+id/italy"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingHorizontal="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:background="#03A9F4"
+            android:id="@+id/spain"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:scaleType="fitCenter"
+            android:layout_height="150dp"
+            android:src="@drawable/laliga"
+            android:padding="30dp"
+          />
+        <ImageButton
+            android:background="#FFFFFF"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:scaleType="fitCenter"
+            android:layout_height="150dp"
+            android:src="@drawable/ligue1"
+            android:padding="30dp"
+
+            android:id="@+id/france"
+          />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:paddingHorizontal="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:background="#EACC81"
+            android:id="@+id/germany"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:scaleType="fitCenter"
+            android:layout_height="150dp"
+            android:src="@drawable/bundesliga"
+            android:padding="30dp"
+            />
+        <ImageButton
+            android:background="#4CAF50"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:scaleType="fitCenter"
+            android:layout_height="150dp"
+            android:src="@drawable/eredivisie"
+            android:padding="30dp"
+            android:id="@+id/netherland"
+
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
