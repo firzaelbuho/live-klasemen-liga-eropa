@@ -22,7 +22,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="5dp"
         android:background="#FFFFFF"
 
 
@@ -37,27 +37,32 @@
             android:orientation="horizontal"
             >
             <TextView
-                android:layout_width="40dp"
+                android:layout_gravity="center"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:text="No "
+                android:text="No"
                 android:id="@+id/teamNumber"
-                android:textSize="16dp"
+                android:textSize="12dp"
+                android:textColor="@color/black"
                 />
             <View
                 android:layout_marginHorizontal="5dp"
                 android:layout_gravity="center"
-                android:layout_width="30dp"
+                android:layout_width="25dp"
+
                 android:layout_height="30dp"
                 android:id="@+id/teamLogo"/>
 
             <TextView
-                android:padding="10dp"
+                android:gravity="start"
+                android:paddingLeft="6dp"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Tim"
+                android:text="Nama Team"
                 android:id="@+id/teamName"
                 android:textColor="@android:color/black"
-                android:textSize="16dp"/>
+                android:textSize="12sp"/>
 
             <View
                 android:layout_width="0dp"
@@ -66,48 +71,57 @@
 
             <LinearLayout
                 android:padding="10dp"
-                android:layout_gravity=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
                 <TextView
 
-                    android:layout_width="32dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="24dp"
+                    android:layout_height="wrap_content"
                     android:text="M"
+                    android:id="@+id/played"
                     android:textColor="@android:color/black"
-                    android:textSize="16dp"/>
+                    android:textSize="12sp"/>
                 <TextView
 
-                    android:layout_width="32dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="24dp"
+                    android:layout_height="wrap_content"
                     android:text="M"
+                    android:id="@+id/win"
                     android:textColor="@android:color/black"
-                    android:textSize="16dp"/>
+                    android:textSize="12sp"/>
                 <TextView
-                    android:layout_width="32dp"
+                    android:id="@+id/draw"
+                    android:layout_width="24dp"
                     android:layout_height="wrap_content"
                     android:text="S"
                     android:textColor="@android:color/black"
-                    android:textSize="16dp"/>
+                    android:textSize="12sp"/>
                 <TextView
-                    android:layout_width="32dp"
+                    android:id="@+id/loss"
+                    android:layout_width="24dp"
                     android:layout_height="wrap_content"
                     android:text="K"
                     android:textColor="@android:color/black"
-                    android:textSize="16dp"/>
+                    android:textSize="12sp"/>
                 <TextView
-                    android:layout_width="32dp"
+                    android:id="@+id/gd"
+                    android:layout_width="24dp"
                     android:layout_height="wrap_content"
                     android:text="SG"
                     android:textColor="@android:color/black"
-                    android:textSize="16dp"/>
+                    android:textSize="12sp"/>
                 <TextView
-                    android:layout_width="32dp"
+                    android:id="@+id/point"
+                    android:layout_width="24dp"
                     android:layout_height="wrap_content"
                     android:text="P"
                     android:textColor="@android:color/black"
-                    android:textSize="16dp"/>
+                    android:textSize="12dp"/>
             </LinearLayout>
+
+
+
 
 
 
