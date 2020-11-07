@@ -6,5 +6,6 @@ class DataActivity {
         var leagueId: String = ""
         var leagueName:String = ""
         var teamId:String = ""
+        var bgRes:Int = 0
     }
 }

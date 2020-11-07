@@ -1,6 +1,7 @@
 package com.proximastudio.bola
 
 import android.content.Intent
+import android.text.method.TextKeyListener.clear
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.proximastudio.bola.repo.*
 import kotlinx.android.synthetic.main.list.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Adapter (private val list:List<Table>) : RecyclerView.Adapter<Adapter.Holder>() {
 
@@ -36,9 +40,13 @@ class Adapter (private val list:List<Table>) : RecyclerView.Adapter<Adapter.Hold
         holder.view.point.text = "${list?.get(position)?.total}"
 
 
-        Glide.with(holder.view)
-                .load(list.get(position)?.img+"/preview")
-                .into(holder.view.teamLogo)
+
+
+        // set badge Image ( Kalo url ambil dari class standings, nanti default diisi null karna butuh proses fetch api )
+
+        val team = list?.get(position)
+        setBadge(position, holder)
+
 
         holder.view.setOnClickListener {
           //  Toast.makeText(holder.view.context, "ini toast", Toast.LENGTH_SHORT).show()
@@ -52,13 +60,6 @@ class Adapter (private val list:List<Table>) : RecyclerView.Adapter<Adapter.Hold
             context.startActivity(intent)
         }
 
-
-
-
-
-
-
-//
 //            bundle.putString("name", list.get(position)?.name)
 //            bundle.putString("desc", list.get(position)?.desc)
 //            intent.putExtras(bundle)
@@ -74,13 +75,54 @@ class Adapter (private val list:List<Table>) : RecyclerView.Adapter<Adapter.Hold
         //}
     }
 
+
     override fun getItemCount(): Int = list?.size
 
     //class holder
 
     class Holder(val view: View) : RecyclerView.ViewHolder(view){
 
+    }
 
+    fun setBadge(position : Int, holder: Holder){
+        val badgeImg : String? = list?.get(position).img
+        Log.d("debug string img skrg", "${badgeImg}")
+
+        if(badgeImg == null){
+
+            val idTeam = list?.get(position).teamid.toString()
+            val postServices = DataRepository.create()
+            postServices.getTeam(idTeam).enqueue(object : Callback<PostModel> {
+
+                override fun onResponse(call: Call<PostModel>, response: Response<PostModel>) {
+                    if (response.isSuccessful) {
+                        val data = response.body()
+                        val myList = data?.teams
+                        val img = myList?.get(0)?.teamBadge.toString()
+
+
+                        Glide.with(holder.view)
+                                .load(img+"/preview")
+                                .placeholder(R.drawable.placeholder)
+                                .into(holder.view.teamLogo)
+
+                    }
+                }
+
+                override fun onFailure(call: Call<PostModel>, error: Throwable) {
+                    Log.e("tag", "errornya ${error.message}")
+                }
+
+            })
+        }
+        else{
+
+
+            Glide.with(holder.view.teamLogo)
+                    .load(list.get(position).img + "/preview")
+                    .placeholder(R.drawable.placeholder)
+                    .into(holder.view.teamLogo)
+        }
 
 
     }

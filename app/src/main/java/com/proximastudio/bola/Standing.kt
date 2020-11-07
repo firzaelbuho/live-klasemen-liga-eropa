@@ -20,7 +20,15 @@ class Standing : AppCompatActivity() {
 
         val leagueId = DataActivity.leagueId
         val leagueName = DataActivity.leagueName
+
         titleLeague.text = "Klasemen ${leagueName}"
+
+        // set background
+
+        bg.setImageResource(DataActivity.bgRes)
+
+        // set list
+
         showStandings(leagueId)
 
 
@@ -55,32 +63,7 @@ class Standing : AppCompatActivity() {
 
 
                     data?.table?.map {
-                        val idTeam = it.teamid.toString()
-                        val postServices = DataRepository.create()
-                        postServices.getTeam(idTeam).enqueue(object : Callback<PostModel> {
 
-
-
-
-                            override fun onResponse(call: Call<PostModel>, response: Response<PostModel>) {
-                                if (response.isSuccessful) {
-                                    val data = response.body()
-                                    val myList = data?.teams
-                                    it.img = myList?.get(0)?.teamBadge.toString()
-
-                                    // Log.d("alamat gambar", "alamatnya ${it.img}")
-
-
-
-
-                                }
-                            }
-
-                            override fun onFailure(call: Call<PostModel>, error: Throwable) {
-                                Log.e("tag", "errornya ${error.message}")
-                            }
-
-                        })
 
                     }
                 }

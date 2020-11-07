@@ -17,5 +17,5 @@ data class Table (
         @SerializedName("draw") val draw : Int,
         @SerializedName("loss") val loss : Int,
         @SerializedName("total") val total : Int,
-        var img : String = "default"
+        var img : String? = null
 )
