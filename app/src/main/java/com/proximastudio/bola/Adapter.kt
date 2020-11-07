@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.proximastudio.bola.repo.*
 import kotlinx.android.synthetic.main.list.view.*
 import retrofit2.Call
@@ -103,6 +104,7 @@ class Adapter (private val list:List<Table>) : RecyclerView.Adapter<Adapter.Hold
 
                         Glide.with(holder.view)
                                 .load(img+"/preview")
+                                .diskCacheStrategy( DiskCacheStrategy.ALL )
                                 .placeholder(R.drawable.placeholder)
                                 .into(holder.view.teamLogo)
 
@@ -120,6 +122,7 @@ class Adapter (private val list:List<Table>) : RecyclerView.Adapter<Adapter.Hold
 
             Glide.with(holder.view.teamLogo)
                     .load(list.get(position).img + "/preview")
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .placeholder(R.drawable.placeholder)
                     .into(holder.view.teamLogo)
         }

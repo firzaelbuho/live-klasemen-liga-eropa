@@ -14,7 +14,6 @@
         android:layout_height="300dp"
         android:padding="30dp"
         android:id="@+id/teamBadge"
-
         android:scaleType="fitCenter"
         />
   <ScrollView
@@ -26,9 +25,9 @@
           android:padding="20dp"
           android:layout_height="wrap_content">
           <TextView
+              android:textColor="@color/design_default_color_on_secondary"
               android:layout_marginVertical="10dp"
               android:textSize="30dp"
-              android:textColor="#000000"
               android:id="@+id/teamName"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"/>
@@ -36,12 +35,13 @@
               android:layout_marginVertical="10dp"
               android:textSize="18dp"
               android:id="@+id/stadiumName"
-              android:textColor="#000000"
+              android:textColor="@color/design_default_color_on_secondary"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"/>
           <TextView
               android:layout_marginVertical="10dp"
               android:textSize="16dp"
+              android:textColor="@color/design_default_color_on_secondary"
               android:id="@+id/desc"
               android:layout_gravity="center_vertical|end"
               android:layout_width="wrap_content"
